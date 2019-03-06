@@ -1,0 +1,36 @@
+<h3>Bank Customers</h3>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Status</th>
+      <th>Amount</th>
+      <th>Profile</th>
+      <th colspan="4">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of allCustomers; let current = index">
+      <td>{{c.id}}</td>
+      <td>{{c.name}}</td>
+      <td>{{c.status}}</td>
+      <td>{{c.amount}}</td>
+      <td><img src="assets/{{c.image}}" width="25"></td>
+      <td><button (click)="deleteCustomer(c.id)">Del</button></td>
+      <td><button>Edit</button></td>
+      <td><button>Block</button></td>
+      <td><button>Transact</button></td>
+    </tr>
+  </tbody>
+</table>
+<hr>
+<h3>Add Customer</h3>
+<form #customerForm="ngForm" (ngSubmit)="addCustomer(customerForm.value)">
+  Name: <input type="text" name="name" [(ngModel)]="cName">
+  &nbsp;
+  Amount: <input type="number" name="amount" [(ngModel)]="cAmount">
+  &nbsp;
+  <button type="submit">Add Customer</button>
+</form>

@@ -1,0 +1,11 @@
+{
+  "customers": [
+    {
+      "name": "Tumkur Halwa",
+      "amount": 13,
+      "status": true,
+      "image": "1.jpg",
+      "id": 1
+    }
+  ]
+}
